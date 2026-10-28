@@ -1,13 +1,32 @@
 #include "Solutions.h"
 
 //This Is the Funtion Prototype For No.1
-void print_game_rules (void)
+void print_game_rules(void)
 {
-    printf("Welcome to the game! Here are the rules:\n");
-    printf("1. You start with a bank balance.\n");
-    printf("2. You place a wager, from your bank balance starting at 100$.\n");
-    printf("3. You roll two dice.\n");
-    printf("4. The sum of the dice determines if you win, lose, or set a point.\n");
+    puts("YAHTZEE RULES");
+    puts("Two players take turns for 13 rounds.");
+    puts("Each player rolls five dice.");
+    puts("You may roll up to three times per turn.");
+    puts("You may keep any dice between rolls.");
+    puts("Each turn, choose one scoring category.");
+    puts("A used category cannot be selected again.");
+    puts("An invalid combination scores zero.");
+    puts("");
+    puts("UPPER SECTION:");
+    puts("Ones through Sixes score matching dice.");
+    puts("Score at least 63 points for a 35-point bonus.");
+    puts("");
+    puts("LOWER SECTION:");
+    puts("Three of a kind: Sum of all dice.");
+    puts("Four of a kind: Sum of all dice.");
+    puts("Full house: 25 points.");
+    puts("Small straight: 30 points.");
+    puts("Large straight: 40 points.");
+    puts("Yahtzee: 50 points.");
+    puts("Chance: Sum of all dice.");
+    puts("");
+    puts("Additional Yahtzees score 50 points each.");
+    puts("The player with the highest total wins.");
 }
 //This Is the Funtion Prototype For No.3
 //This will Print the Insides of the die 
@@ -67,9 +86,15 @@ void roll_dice(int dice[6])
     }
 }
 //This Is the Funtion Prototype For No.6
-int are_pair(int die1_value[], int die2_value[]) 
+int are_pair(int dice1[], int dice2[]) 
 {
+    int count1[6] = {0}, count2[6] = {0}, sum1 = 0, sum2 = 0;
+    for(int i = 0; i < 6; i++){ count1[dice1[i]]++; sum1 += dice1[i];}
+    for(int i = 0; i < 6; i++){ count2[dice2[i]]++; sum2 += dice2[i];}
+    printf("%d", sum1);
+    printf("%d", sum2);
 
+    
 }
 //This Is the Funtion Prototype For No.7
 int is_win_loss (int are_pair)
