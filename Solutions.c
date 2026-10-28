@@ -54,13 +54,17 @@ void printDice(const int dice[6])
     printf("\n\n");
 }
 //This Is the Funtion Prototype For No.5
-//This Is the Funtion Prototype For No.6
-int roll_die (void) {
-for (int i = 0; i < 6; i++)
+int roll_die(void)
 {
-    dice[i] = (rand() % 6) + 1;
-    return dice[];
+    return (rand() % 6) + 1;
 }
+//This Is the Funtion Prototype For No.6
+void roll_dice(int dice[6])
+{
+    for (int i = 0; i < 6; i++)
+    {
+        dice[i] = roll_die();
+    }
 }
 //This Is the Funtion Prototype For No.6
 int are_pair(int die1_value[], int die2_value[]) 
