@@ -55,9 +55,12 @@ void printDice(const int dice[6])
 }
 //This Is the Funtion Prototype For No.5
 //This Is the Funtion Prototype For No.6
-int roll_die (void) 
+int roll_die (void) {
+for (int i = 0; i < 6; i++)
 {
-    return (rand() % 6) + 1;
+    dice[i] = (rand() % 6) + 1;
+    return dice[];
+}
 }
 //This Is the Funtion Prototype For No.6
 int are_pair(int die1_value[], int die2_value[]) 
