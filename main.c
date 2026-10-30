@@ -51,7 +51,7 @@ int main(void)
 
                     printf("\nPLAYER %d FINAL DICE\n\n", player);
                     printDice(dice);
-                    points = are_pair(dice1, dice2, used1, used2, player);
+                    points = are_pair(dice1, dice2, used1, used2, player, &choice);
                     if(points < 0){printf("Unable to record score.\n");return 1;}
                     if(player == 1)
                     {
