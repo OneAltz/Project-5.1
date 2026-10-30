@@ -131,7 +131,6 @@ int are_pair(int dice1[], int dice2[], int used1[13], int used2[13], int player,
         used[choice - 1] = 1;
         *selected_category = choice;
         printf("\nPlayer %d Scored %d Points In %s!\n", player, points[choice - 1], names[choice - 1]);
-        return points[choice - 1];
     }
 }
 char yes_no(void)
