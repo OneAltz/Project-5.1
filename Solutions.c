@@ -124,7 +124,7 @@ int are_pair(int dice1[], int dice2[], int used1[13], int used2[13], int player,
         if(choice < 1 || choice > 13){printf("Invalid Selection\n");}
         if(used[choice - 1] == 1 && !(choice == 12 && points[11] == 50))
         {
-            TA = false
+            TA = false;
             printf("You Have Already Used This Category\n");
             continue;
         }
