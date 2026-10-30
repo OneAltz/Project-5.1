@@ -90,6 +90,7 @@ void calculate_points(int count[7], int sum, int points[13])
 int are_pair(int dice1[], int dice2[], int used1[13], int used2[13], int player, int *selected_category)
 {
     int count[7] = {0}, sum = 0, points[13] = {0}, choice = 0;
+    bool TA;
     int *dice, *used;
     char *names[13] = {"Ones", "Twos", "Threes", "Fours", "Fives", "Sixes","Three of a Kind", "Four of a Kind", "Full House","Small Straight", "Large Straight", "Yahtzee", "Chance"};
     if(player == 1){dice = dice1; used = used1;}
@@ -114,7 +115,7 @@ int are_pair(int dice1[], int dice2[], int used1[13], int used2[13], int player,
         else if(i == 11 && points[11] == 50){printf("12. Additional Yahtzee - 50 Points\n");}
         else{printf("%2d. %-18s USED\n", i + 1, names[i]);}
     }
-    while(1)
+    while(TA = true)
     {
         printf("\nSelect Your Scoring Category (1-13): ");
         int result = scanf("%d", &choice);
@@ -123,6 +124,7 @@ int are_pair(int dice1[], int dice2[], int used1[13], int used2[13], int player,
         if(choice < 1 || choice > 13){printf("Invalid Selection\n");}
         if(used[choice - 1] == 1 && !(choice == 12 && points[11] == 50))
         {
+            TA = false
             printf("You Have Already Used This Category\n");
             continue;
         }
