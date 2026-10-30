@@ -18,31 +18,13 @@ int main(void)
         printf("3. Exit The Game\n\n");
         printf("Enter Your Choice: ");
 
-        if(scanf("%d", &num) != 1)
-        {
-            if(feof(stdin)){return 0;}
-            clear_input();
-            printf("Invalid Selection\n");
-            continue;
+        if(scanf("%d", &num) != 1){printf("Invalid Selection\n");continue;}
+        if(num == 1){print_game_rules();
         }
-
-        clear_input();
-
-        if(num == 1)
-        {
-            print_game_rules();
-        }
-        else if(num == 2)
-        {
-            // Reset both players for a new game
-            score1 = 0; score2 = 0;
-            upper1 = 0; upper2 = 0;
-
-            for(int i = 0; i < 13; i++)
-            {
-                used1[i] = 0;
-                used2[i] = 0;
-            }
+        else if(num == 2){
+        score1 = 0; score2 = 0;
+        upper1 = 0; upper2 = 0;
+            for(int i = 0; i < 13; i++){used1[i] = 0;used2[i] = 0;}
             for(round = 1; round <= 13; round++)
             {
                 for(player = 1; player <= 2; player++)
