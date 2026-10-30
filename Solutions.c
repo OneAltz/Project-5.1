@@ -115,7 +115,7 @@ int are_pair(int dice1[], int dice2[], int used1[13], int used2[13], int player,
         else if(i == 11 && points[11] == 50){printf("12. Additional Yahtzee - 50 Points\n");}
         else{printf("%2d. %-18s USED\n", i + 1, names[i]);}
     }
-    while(TA = true)
+    while(TA)
     {
         printf("\nSelect Your Scoring Category (1-13): ");
         int result = scanf("%d", &choice);
