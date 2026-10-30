@@ -61,34 +61,17 @@ int main(void)
                     else
                     {
                         score2 += points;
-
-                        if(choice >= 1 && choice <= 6)
-                        {
-                            upper2 += points;
-                        }
-
+                        if(choice >= 1 && choice <= 6){upper2 += points;}
                         printf("Player 2 Total: %d\n", score2);
                     }
                 }
             }
-            // Final scores
             printf("\n========== GAME OVER ==========\n");
-
             printf("Player 1 Score: %d\n", score1);
             printf("Player 2 Score: %d\n", score2);
-
-            if(score1 > score2)
-            {
-                printf("PLAYER 1 WINS!\n");
-            }
-            else if(score2 > score1)
-            {
-                printf("PLAYER 2 WINS!\n");
-            }
-            else
-            {
-                printf("THE GAME IS A TIE!\n");
-            }
+            if(score1 > score2){printf("PLAYER 1 WINS!\n");}
+            else if(score2 > score1){printf("PLAYER 2 WINS!\n");}
+            else{printf("THE GAME IS A TIE!\n");}
         }
         else if(num == 3)
         {
