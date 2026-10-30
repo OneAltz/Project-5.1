@@ -27,7 +27,6 @@ int main(void)
         }
 
         clear_input();
-        printf("\033[2J\033[H");
 
         if(num == 1)
         {
@@ -44,11 +43,8 @@ int main(void)
                 used1[i] = 0;
                 used2[i] = 0;
             }
-
-            // Play 13 rounds
             for(round = 1; round <= 13; round++)
             {
-                // Player 1 then Player 2
                 for(player = 1; player <= 2; player++)
                 {
                     int *dice;
@@ -56,8 +52,6 @@ int main(void)
                     else{dice = dice2;}
                     printf("\nROUND %d OF 13 | PLAYER %d\n", round, player);
                     printf("Press Enter to Roll Your Dice...");
-                    fflush(stdout);
-                    if(getchar() == EOF){return 0;}
                     roll_dice(dice);
                     for(int roll = 1; roll <= 3; roll++)
                     {
@@ -69,10 +63,7 @@ int main(void)
                         for(int i = 0; i < 5; i++)
                         {
                             printf("Reroll Die %d? (Y/N): ", i + 1);
-                            if(yes_no() == 'y')
-                            {
-                                dice[i] = roll_die();
-                            }
+                            if(yes_no() == 'y'){dice[i] = roll_die();}
                         }
                     }
 
