@@ -119,7 +119,7 @@ int are_pair(int dice1[], int dice2[], int used1[13], int used2[13], int player,
         printf("\nSelect Your Scoring Category (1-13): ");
         int result = scanf("%d", &choice);
         if(result == EOF){return -1;}
-        if(result != 1){ printf("Invalid Input\n");}
+        if(result != 1){ printf("Invalid Input\n"); continue;}
         if(choice < 1 || choice > 13){printf("Invalid Selection\n");}
         if(used[choice - 1] == 1 && !(choice == 12 && points[11] == 50))
         {
