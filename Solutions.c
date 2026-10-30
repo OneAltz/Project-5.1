@@ -111,11 +111,8 @@ char yes_no(void)
     {
         if(scanf(" %c", &answer) != 1) {exit(0);}
         clear_input();
-
-        answer = (char)tolower((unsigned char)answer);
-
+        if(answer == 'Y' || answer == 'N') {return answer;}
         if(answer == 'y' || answer == 'n') {return answer;}
-
         printf("Please enter Y or N: ");
     }
 }
