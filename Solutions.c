@@ -43,10 +43,10 @@ static const char *faces[7][3] = {
 // Display all six dice in one row
 void printDice(const int dice[6])
 {
-    for (int i = 0; i < 6; i++){printf("+-------+  ");}
+    for (int i = 0; i < 5; i++){printf("+-------+  ");}
     printf("\n");
-    for (int row = 0; row < 3; row++){for (int i = 0; i < 6; i++){int value = dice[i];if (value >= 1 && value <= 6){printf("|%s|  ", faces[value][row]);}}printf("\n");}
-    for (int i = 0; i < 6; i++){printf("+-------+  ");}
+    for (int row = 0; row < 3; row++){for (int i = 0; i < 5; i++){int value = dice[i];if (value >= 1 && value <= 6){printf("|%s|  ", faces[value][row]);}}printf("\n");}
+    for (int i = 0; i < 5; i++){printf("+-------+  ");}
     printf("\n\n");
 }
 //This Is the Funtion Prototype For No.5
