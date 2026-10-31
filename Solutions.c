@@ -121,9 +121,7 @@ while(1)
     int result = scanf("%d", &choice);
 
     if(result == EOF){return -1;}
-    if(result != 1){clear_input(); printf("Invalid Input\n"); continue;}
-
-    clear_input();
+    if(result != 1){ printf("Invalid Input\n"); continue;}
 
     if(choice < 1 || choice > 13){printf("Invalid Selection\n"); continue;}
     if(used[choice - 1] == 1 && !(choice == 12 && points[11] == 50)){printf("You Have Already Used This Category\n"); continue;}
