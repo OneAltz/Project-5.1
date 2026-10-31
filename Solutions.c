@@ -143,7 +143,6 @@ char yes_no(void)
     while(1)
     {
         if(scanf(" %c", &answer) != 1){exit(0);}
-        clear_input();
 
         if(answer == 'Y' || answer == 'y'){return 'y';}
         if(answer == 'N' || answer == 'n'){return 'n';}
