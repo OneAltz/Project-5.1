@@ -115,18 +115,26 @@ int are_pair(int dice1[], int dice2[], int used1[13], int used2[13], int player,
         else if(i == 11 && points[11] == 50){printf("12. Additional Yahtzee - 50 Points\n");}
         else{printf("%2d. %-18s USED\n", i + 1, names[i]);}
     }
-    while(TA)
-    {
-        printf("\nSelect Your Scoring Category (1-13): ");
-        int result = scanf("%d", &choice);
-        if(result == EOF){return -1;}
-        if(result < 1){printf("Invalid Input\n");}
-        if(choice < 1 || choice > 13){printf("Invalid Selection\n");}
-        if(used[choice - 1] == 1 && !(choice == 12 && points[11] == 50)){TA = false; printf("You Have Already Used This Category\n");}
-        used[choice - 1] = 1;
-        *selected_category = choice;
-        printf("\nPlayer %d Scored %d Points In %s!\n", player, points[choice - 1], names[choice - 1]);
-    }
+while(1)
+{
+    printf("\nSelect Your Scoring Category (1-13): ");
+    int result = scanf("%d", &choice);
+
+    if(result == EOF){return -1;}
+    if(result != 1){clear_input(); printf("Invalid Input\n"); continue;}
+
+    clear_input();
+
+    if(choice < 1 || choice > 13){printf("Invalid Selection\n"); continue;}
+    if(used[choice - 1] == 1 && !(choice == 12 && points[11] == 50)){printf("You Have Already Used This Category\n"); continue;}
+
+    used[choice - 1] = 1;
+    *selected_category = choice;
+
+    printf("\nPlayer %d Scored %d Points In %s!\n", player, points[choice - 1], names[choice - 1]);
+
+    return points[choice - 1];
+}
 }
 char yes_no(void)
 {
@@ -134,11 +142,12 @@ char yes_no(void)
 
     while(1)
     {
-        if(scanf("%c", &answer) != 1){exit(0);}
-        
+        if(scanf(" %c", &answer) != 1){exit(0);}
+        clear_input();
 
         if(answer == 'Y' || answer == 'y'){return 'y';}
         if(answer == 'N' || answer == 'n'){return 'n';}
+
         printf("Please Enter Y or N: ");
     }
 }
